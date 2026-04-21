@@ -159,8 +159,15 @@ function AddButton({ label, onClick, iconOnly, fullWidth, className }: AddButton
           size="icon-sm"
           onClick={onClick}
           aria-label={label}
-          className="h-7 w-7 cursor-pointer relative z-10 hover:bg-gray-200 hover:shadow-2xl "
-     
+          className="h-7 w-7 cursor-pointer relative z-10 hover:shadow-2xl"
+          style={
+            hovered
+              ? {
+                  backgroundColor:
+                    "color-mix(in srgb, rgb(var(--foreground)) 10%, transparent)",
+                }
+              : undefined
+          }
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
